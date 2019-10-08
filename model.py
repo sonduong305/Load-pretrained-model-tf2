@@ -8,7 +8,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 mobile = tensorflow.keras.applications.mobilenet.MobileNet()
 
-def MobileNetModel():
+def Load_MobileNetModel(path):
     # CREATE THE MODEL ARCHITECTURE
 
     # Exclude the last 5 layers of the above model.
@@ -26,6 +26,6 @@ def MobileNetModel():
     model = Model(inputs=mobile.input, outputs=predictions)
 
     # model.summary()
-    model.load_weights("D:\\ws\\Skin cancer\\models\\model_mau.h5")
+    model.load_weights(path)
 
     return model
